@@ -1,64 +1,61 @@
 import React, { Component } from "react";
+import {
+  Card,
+  CardImg,
+  CardImgOverlay,
+  CardText,
+  CardBody,
+  CardTitle,
+} from "reactstrap";
 
 class HotelDirectory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      campsites: [
-        {
-          id: 0,
-          name: "Hyatt Place Hotel",
-          image: "assets/images/Hyatt.jpg",
-          elevation: 1233,
-          description:
-            "Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.",
-        },
-        {
-          id: 1,
-          name: "Duxton Inn ",
-          image: "assets/images/Duxton.jpg",
-          elevation: 877,
-          description:
-            "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River.",
-        },
-        {
-          id: 2,
-          name: "Holiday Inn",
-          image: "assets/images/HolidayInn.jpg",
-          elevation: 2901,
-          description:
-            "Let NuCamp be your guide to this off-the-beaten-path, hike-in-only campground.",
-        },
-        {
-          id: 3,
-          name: "Inter Continental",
-          image: "assets/images/InterContinental.jpg",
-          elevation: 42,
-          description:
-            "You'll never want to leave this hidden gem, deep within the lush Redux Woods.",
-        },
-      ],
+      selectedHotelsite: null,
     };
+  }
+  onHotelsiteSelect(hotelsite) {
+    this.setState({ selectedHotelsite: hotelsite });
+  }
+
+  renderSelectedHotelsite(hotelsite) {
+    if (hotelsite) {
+      return (
+        <Card>
+          <CardImg top src={hotelsite.image} alt={hotelsite.name} />
+          <CardBody>
+            <CardTitle>{hotelsite.name}</CardTitle>
+            <CardTitle>{hotelsite.description}</CardTitle>
+          </CardBody>
+        </Card>
+      );
+    }
+
+    return <div />;
   }
 
   render() {
-    const hotelDirectory = this.state.campsites.map((campsite) => {
+    const hotelDirectory = this.props.hotelsites.map((hotelsite) => {
       return (
-        <div key={campsite.id} className="col">
-          <img
-            src={campsite.image}
-            alt={campsite.name}
-            width="200"
-            height="200"
-          />
-          <h2>{campsite.name}</h2>
-          <p>{campsite.description}</p>
+        <div key={hotelsite.id} className="col-md-5 m-1">
+          <Card onClick={() => this.onHotelsiteSelect(hotelsite)}>
+            <CardImg top src={hotelsite.image} alt={hotelsite.name} />
+            <CardImgOverlay>
+              <CardTitle>{hotelsite.name}</CardTitle>
+            </CardImgOverlay>
+          </Card>
         </div>
       );
     });
     return (
       <div className="container">
         <div className="row">{hotelDirectory}</div>
+        <div className="row">
+          <div className="col-md-5 m-1">
+            {this.renderSelectedHotelsite(this.state.selectedHotelsite)}
+          </div>
+        </div>
       </div>
     );
   }
