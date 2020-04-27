@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import HotelsiteInfo from "./HotelsiteInfoComponent";
+
 import {
   Card,
   CardImg,
@@ -19,22 +21,6 @@ class HotelDirectory extends Component {
     this.setState({ selectedHotelsite: hotelsite });
   }
 
-  renderSelectedHotelsite(hotelsite) {
-    if (hotelsite) {
-      return (
-        <Card>
-          <CardImg top src={hotelsite.image} alt={hotelsite.name} />
-          <CardBody>
-            <CardTitle>{hotelsite.name}</CardTitle>
-            <CardTitle>{hotelsite.description}</CardTitle>
-          </CardBody>
-        </Card>
-      );
-    }
-
-    return <div />;
-  }
-
   render() {
     const hotelDirectory = this.props.hotelsites.map((hotelsite) => {
       return (
@@ -51,11 +37,7 @@ class HotelDirectory extends Component {
     return (
       <div className="container">
         <div className="row">{hotelDirectory}</div>
-        <div className="row">
-          <div className="col-md-5 m-1">
-            {this.renderSelectedHotelsite(this.state.selectedHotelsite)}
-          </div>
-        </div>
+        <div className="row"><HotelsiteInfo hotelsite={this.state.selectedHotelsite} /></div>
       </div>
     );
   }

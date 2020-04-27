@@ -10,9 +10,9 @@ export const HOTELSITES = [
       {
         id: 0,
         rating: 5,
-        text: "What a magnificent view!",
-        author: "Tinus Lorvaldes",
-        date: "2018-10-25T16:30Z",
+        text: "Hyatt view!",
+        author: "Apple Valley",
+        date: "2020-10-25T16:30Z",
       },
       {
         id: 1,
@@ -56,9 +56,9 @@ export const HOTELSITES = [
       {
         id: 0,
         rating: 5,
-        text: "What a magnificent view!",
-        author: "Tinus Lorvaldes",
-        date: "2018-10-25T16:30Z",
+        text: "What a magnificent Duxton view!",
+        author: "Brian",
+        date: "2019-10-25T16:30Z",
       },
       {
         id: 1,
