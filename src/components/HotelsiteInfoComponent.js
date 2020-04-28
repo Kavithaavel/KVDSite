@@ -28,8 +28,13 @@ class HotelsiteInfo extends Component {
             <CardBody>
               {comments.map((comment) => (
                 <div key={comment.id}>
-                  {comment.text}
-                  <br /> -- {comment.author}
+                  {comment.text} <br />
+                  -- {comment.author},{" "}
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "2-digit",
+                  }).format(new Date(Date.parse(comment.date)))}
                 </div>
               ))}
             </CardBody>

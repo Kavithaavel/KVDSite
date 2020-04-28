@@ -37,7 +37,9 @@ class HotelDirectory extends Component {
     return (
       <div className="container">
         <div className="row">{hotelDirectory}</div>
-        <div className="row"><HotelsiteInfo hotelsite={this.state.selectedHotelsite} /></div>
+        <div className="row">
+          <HotelsiteInfo hotelsite={this.state.selectedHotelsite} />
+        </div>
       </div>
     );
   }

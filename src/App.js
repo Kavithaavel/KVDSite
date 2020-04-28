@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import "./App.css";
 import HotelDirectory from "./components/HotelDirectoryComponent";
-import { HOTELSITES } from "./Shared/hotelsites";
+import { HOTELSITES } from "./shared/hotelsites";
 
 class App extends Component {
   constructor(props) {
