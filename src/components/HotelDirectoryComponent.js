@@ -1,31 +1,17 @@
 import React, { Component } from "react";
-import HotelsiteInfo from "./HotelsiteInfoComponent";
 
-import {
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardText,
-  CardBody,
-  CardTitle,
-} from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 
 class HotelDirectory extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedHotelsite: null,
-    };
-  }
-  onHotelsiteSelect(hotelsite) {
-    this.setState({ selectedHotelsite: hotelsite });
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     const hotelDirectory = this.props.hotelsites.map((hotelsite) => {
       return (
         <div key={hotelsite.id} className="col-md-5 m-1">
-          <Card onClick={() => this.onHotelsiteSelect(hotelsite)}>
+          <Card onClick={() => this.props.onClick(hotelsite.id)}>
             <CardImg top src={hotelsite.image} alt={hotelsite.name} />
             <CardImgOverlay>
               <CardTitle>{hotelsite.name}</CardTitle>
@@ -37,9 +23,6 @@ class HotelDirectory extends Component {
     return (
       <div className="container">
         <div className="row">{hotelDirectory}</div>
-        <div className="row">
-          <HotelsiteInfo hotelsite={this.state.selectedHotelsite} />
-        </div>
       </div>
     );
   }

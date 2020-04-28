@@ -1,20 +1,11 @@
 import React, { Component } from "react";
 
-import {
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardText,
-  CardBody,
-  CardTitle,
-} from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
 
 class HotelsiteInfo extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //selectedHotelsite: null,
-    };
+    this.state = {};
   }
 
   renderComments(comments) {
@@ -45,7 +36,7 @@ class HotelsiteInfo extends Component {
     return <div />;
   }
 
-  renderCampsite(hotelsite) {
+  renderHotelsite(hotelsite) {
     if (hotelsite) {
       return (
         <div className="col m-1">
@@ -65,11 +56,9 @@ class HotelsiteInfo extends Component {
   render() {
     if (this.props.hotelsite) {
       return (
-        <div className="row">
-          <div className="col m-1">
-            {this.renderCampsite(this.props.hotelsite)}
-          </div>
-          <div className="col m-1">
+        <div className="container">
+          <div className="row">
+            {this.renderHotelsite(this.props.hotelsite)}
             {this.renderComments(this.props.hotelsite.comments)}
           </div>
         </div>
