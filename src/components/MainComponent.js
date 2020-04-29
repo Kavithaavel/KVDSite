@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import HotelDirectory from "./HotelDirectoryComponent";
 import HotelsiteInfo from "./HotelsiteInfoComponent";
+import Header from "./HeaderComponent";
+import Footer from "./FooterComponent";
 import { HOTELSITES } from "../shared/hotelsites";
 
 class Main extends Component {
@@ -20,11 +22,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Navbar dark color="info">
-          <div className="container">
-            <NavbarBrand href="/">KVD Tourism</NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <HotelDirectory
           hotelsites={this.state.hotelsites}
           onClick={(hotelsiteId) => this.onHotelsiteSelect(hotelsiteId)}
@@ -36,6 +34,7 @@ class Main extends Component {
             )[0]
           }
         />
+        <Footer />
       </div>
     );
   }
