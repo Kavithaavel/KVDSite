@@ -4,7 +4,7 @@ import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 
 function RenderHotelDirectoryItem({ hotelsite, onClick }) {
   return (
-    <Card onClick={() => onClick(hotelsite.id)}>
+    <Card>
       <CardImg top src={hotelsite.image} alt={hotelsite.name} />
       <CardImgOverlay>
         <CardTitle>{hotelsite.name}</CardTitle>
@@ -17,10 +17,7 @@ function HotelDirectory(props) {
   const hotelDirectory = props.hotelsites.map((hotelsite) => {
     return (
       <div key={hotelsite.id} className="col-md-5 m-1">
-        <RenderHotelDirectoryItem
-          hotelsite={hotelsite}
-          onClick={props.onClick}
-        />
+        <RenderHotelDirectoryItem hotelsite={hotelsite} />
       </div>
     );
   });
