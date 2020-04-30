@@ -1,14 +1,16 @@
 import React from "react";
-
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function RenderHotelDirectoryItem({ hotelsite, onClick }) {
   return (
     <Card>
-      <CardImg top src={hotelsite.image} alt={hotelsite.name} />
-      <CardImgOverlay>
-        <CardTitle>{hotelsite.name}</CardTitle>
-      </CardImgOverlay>
+      <Link to={`/directory/${hotelsite.id}`}>
+        <CardImg width="100%" src={hotelsite.image} alt={hotelsite.name} />
+        <CardImgOverlay>
+          <CardTitle>{hotelsite.name}</CardTitle>
+        </CardImgOverlay>
+      </Link>
     </Card>
   );
 }

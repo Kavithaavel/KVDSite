@@ -37,6 +37,22 @@ class Main extends Component {
         />
       );
     };
+
+    const HotelsiteWithId = ({ match }) => {
+      return (
+        <HotelsiteInfo
+          hotelsite={
+            this.state.hotelsites.filter(
+              (hotelsite) => hotelsite.id === +match.params.hotelsiteId
+            )[0]
+          }
+          comments={this.state.comments.filter(
+            (comment) => comment.hotelsiteId === +match.params.hotelsiteId
+          )}
+        />
+      );
+    };
+
     return (
       <div>
         <Header />
@@ -47,15 +63,10 @@ class Main extends Component {
             path="/directory"
             render={() => <HotelDirectory hotelsites={this.state.hotelsites} />}
           />
+          <Route path="/directory/:hotelsiteId" component={HotelsiteWithId} />
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
         </Switch>
-
-        {/* <HotelDirectory
-          hotelsites={this.state.hotelsites}
-          onClick={(hotelsiteId) => this.onHotelsiteSelect(hotelsiteId)}
-        /> */}
-
         <Footer />
       </div>
     );

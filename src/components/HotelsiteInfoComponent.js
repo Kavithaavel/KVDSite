@@ -52,7 +52,7 @@ function HotelsiteInfo(props) {
       <div className="container">
         <div className="row">
           <RenderHotelsite hotelsite={props.hotelsite} />
-          <RenderComments comments={props.hotelsite.comments} />
+          <RenderComments comments={props.comments} />
         </div>
       </div>
     );
