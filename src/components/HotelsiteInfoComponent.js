@@ -34,7 +34,7 @@ function RenderHotelsite({ hotelsite }) {
     return (
       <div className="col m-1">
         <Card>
-          <CardImg top src={hotelsite.image} alt={hotelsite.name} />
+          <CardImg src={`/${hotelsite.image}`} alt={hotelsite.name} />
           <CardBody>
             <CardTitle>{hotelsite.name}</CardTitle>
             <CardTitle>{hotelsite.description}</CardTitle>
