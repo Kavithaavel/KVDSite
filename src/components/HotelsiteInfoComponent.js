@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
 function RenderComments({ comments }) {
   if (comments) {
@@ -36,7 +44,6 @@ function RenderHotelsite({ hotelsite }) {
         <Card>
           <CardImg src={`/${hotelsite.image}`} alt={hotelsite.name} />
           <CardBody>
-            <CardTitle>{hotelsite.name}</CardTitle>
             <CardTitle>{hotelsite.description}</CardTitle>
           </CardBody>
         </Card>
@@ -50,6 +57,18 @@ function HotelsiteInfo(props) {
   if (props.hotelsite) {
     return (
       <div className="container">
+        <div className="row">
+          <div className="col">
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <Link to="/directory">Hotel Directory</Link>
+              </BreadcrumbItem>
+              <BreadcrumbItem active>{props.hotelsite.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <h2>{props.hotelsite.name}</h2>
+            <hr />
+          </div>
+        </div>
         <div className="row">
           <RenderHotelsite hotelsite={props.hotelsite} />
           <RenderComments comments={props.comments} />
