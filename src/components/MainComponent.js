@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand } from "reactstrap";
 import HotelDirectory from "./HotelDirectoryComponent";
 import HotelsiteInfo from "./HotelsiteInfoComponent";
 import Home from "./HomeComponent";
+import About from "./AboutComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Contact from "./ContactComponent";
@@ -65,6 +66,11 @@ class Main extends Component {
           />
           <Route path="/directory/:hotelsiteId" component={HotelsiteWithId} />
           <Route exact path="/contactus" component={Contact} />
+          <Route
+            exact
+            path="/aboutus"
+            render={() => <About partners={this.state.partners} />}
+          />
           <Redirect to="/home" />
         </Switch>
         <Footer />
