@@ -7,34 +7,30 @@ import About from "./AboutComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Contact from "./ContactComponent";
-import { HOTELSITES } from "../shared/hotelsites";
-import { COMMENTS } from "../shared/comments";
-import { PARTNERS } from "../shared/partners";
-import { PROMOTIONS } from "../shared/promotions";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+  return {
+    hotelsites: state.hotelsites,
+    comments: state.comments,
+    partners: state.partners,
+    promotions: state.promotions,
+  };
+};
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hotelsites: HOTELSITES,
-      comments: COMMENTS,
-      partners: PARTNERS,
-      promotions: PROMOTIONS,
-    };
-  }
-
   render() {
     const HomePage = () => {
       return (
         <Home
           hotelsite={
-            this.state.hotelsites.filter((hotelsite) => hotelsite.featured)[0]
+            this.props.hotelsites.filter((hotelsite) => hotelsite.featured)[0]
           }
           promotion={
-            this.state.promotions.filter((promotion) => promotion.featured)[0]
+            this.props.promotions.filter((promotion) => promotion.featured)[0]
           }
-          partner={this.state.partners.filter((partner) => partner.featured)[0]}
+          partner={this.props.partners.filter((partner) => partner.featured)[0]}
         />
       );
     };
@@ -43,11 +39,11 @@ class Main extends Component {
       return (
         <HotelsiteInfo
           hotelsite={
-            this.state.hotelsites.filter(
+            this.props.hotelsites.filter(
               (hotelsite) => hotelsite.id === +match.params.hotelsiteId
             )[0]
           }
-          comments={this.state.comments.filter(
+          comments={this.props.comments.filter(
             (comment) => comment.hotelsiteId === +match.params.hotelsiteId
           )}
         />
@@ -62,14 +58,14 @@ class Main extends Component {
           <Route
             exact
             path="/directory"
-            render={() => <HotelDirectory hotelsites={this.state.hotelsites} />}
+            render={() => <HotelDirectory hotelsites={this.props.hotelsites} />}
           />
           <Route path="/directory/:hotelsiteId" component={HotelsiteWithId} />
           <Route exact path="/contactus" component={Contact} />
           <Route
             exact
             path="/aboutus"
-            render={() => <About partners={this.state.partners} />}
+            render={() => <About partners={this.props.partners} />}
           />
           <Redirect to="/home" />
         </Switch>
@@ -79,4 +75,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
