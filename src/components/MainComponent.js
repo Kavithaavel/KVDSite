@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
 import HotelDirectory from "./HotelDirectoryComponent";
 import HotelsiteInfo from "./HotelsiteInfoComponent";
 import Home from "./HomeComponent";
