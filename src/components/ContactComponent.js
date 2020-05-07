@@ -28,12 +28,12 @@ class Contact extends Component {
       agree: false,
       contactType: false,
       feedback: "",
-      touched: {
-        firstName: false,
-        lastName: false,
-        phoneNum: false,
-        email: false,
-      },
+      // touched: {
+      //   firstName: false,
+      //   lastName: false,
+      //   phoneNum: false,
+      //   email: false,
+      // },
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
