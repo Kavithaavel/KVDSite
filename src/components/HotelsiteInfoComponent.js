@@ -36,6 +36,12 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
+    this.props.addComment(
+      this.props.hotelsiteId,
+      values.rating,
+      values.author,
+      values.text
+    );
     console.log("Current state is: " + JSON.stringify(values));
     alert("Current state is: " + JSON.stringify(values));
     this.toggleModal();
@@ -140,7 +146,7 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments }) {
+function RenderComments({ comments, addComment, hotelsiteId }) {
   if (comments) {
     return (
       <div className="col">
@@ -160,7 +166,7 @@ function RenderComments({ comments }) {
                 }).format(new Date(Date.parse(comment.date)))}
               </div>
             ))}
-            <CommentForm />
+            <CommentForm addComment={addComment} hotelsiteId={hotelsiteId} />
           </CardBody>
         </Card>
       </div>
@@ -203,7 +209,11 @@ function HotelsiteInfo(props) {
         </div>
         <div className="row">
           <RenderHotelsite hotelsite={props.hotelsite} />
-          <RenderComments comments={props.comments} />
+          <RenderComments
+            comments={props.comments}
+            addComment={props.addComment}
+            hotelsiteId={props.hotelsite.id}
+          />
         </div>
       </div>
     );
