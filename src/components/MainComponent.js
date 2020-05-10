@@ -8,6 +8,7 @@ import Footer from "./FooterComponent";
 import Contact from "./ContactComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { actions } from "react-redux-form";
 import { addComment, fetchHotelsites } from "../redux/ActionCreators";
 
 const mapStateToProps = (state) => {
@@ -23,6 +24,7 @@ const mapDispatchToProps = {
   addComment: (hotelsiteId, rating, author, text) =>
     addComment(hotelsiteId, rating, author, text),
   fetchHotelsites: () => fetchHotelsites(),
+  resetFeedbackForm: () => actions.reset("feedbackForm"),
 };
 
 class Main extends Component {
@@ -78,7 +80,13 @@ class Main extends Component {
             render={() => <HotelDirectory hotelsites={this.props.hotelsites} />}
           />
           <Route path="/directory/:hotelsiteId" component={HotelsiteWithId} />
-          <Route exact path="/contactus" component={Contact} />
+          <Route
+            exact
+            path="/contactus"
+            render={() => (
+              <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
+            )}
+          />
           <Route
             exact
             path="/aboutus"
