@@ -8,6 +8,7 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Loading } from "./LoadingComponent";
 
 function RenderHotelDirectoryItem({ hotelsite, onClick }) {
   return (
@@ -23,13 +24,33 @@ function RenderHotelDirectoryItem({ hotelsite, onClick }) {
 }
 
 function HotelDirectory(props) {
-  const hotelDirectory = props.hotelsites.map((hotelsite) => {
+  const hotelDirectory = props.hotelsites.hotelsites.map((hotelsite) => {
     return (
       <div key={hotelsite.id} className="col-md-5 m-1">
         <RenderHotelDirectoryItem hotelsite={hotelsite} />
       </div>
     );
   });
+  if (props.hotelsites.isLoading) {
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+  if (props.hotelsites.errMess) {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h4>{props.hotelsites.errMess}</h4>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="container">
       <div className="row">

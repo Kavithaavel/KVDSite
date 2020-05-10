@@ -8,7 +8,7 @@ import Footer from "./FooterComponent";
 import Contact from "./ContactComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { addComment } from "../redux/ActionCreators";
+import { addComment, fetchHotelsites } from "../redux/ActionCreators";
 
 const mapStateToProps = (state) => {
   return {
@@ -22,16 +22,25 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   addComment: (hotelsiteId, rating, author, text) =>
     addComment(hotelsiteId, rating, author, text),
+  fetchHotelsites: () => fetchHotelsites(),
 };
 
 class Main extends Component {
+  componentDidMount() {
+    this.props.fetchHotelsites();
+  }
+
   render() {
     const HomePage = () => {
       return (
         <Home
           hotelsite={
-            this.props.hotelsites.filter((hotelsite) => hotelsite.featured)[0]
+            this.props.hotelsites.hotelsites.filter(
+              (hotelsite) => hotelsite.featured
+            )[0]
           }
+          hotelsitesLoading={this.props.hotelsites.isLoading}
+          hotelsitesErrMess={this.props.hotelsites.errMess}
           promotion={
             this.props.promotions.filter((promotion) => promotion.featured)[0]
           }
@@ -44,10 +53,12 @@ class Main extends Component {
       return (
         <HotelsiteInfo
           hotelsite={
-            this.props.hotelsites.filter(
+            this.props.hotelsites.hotelsites.filter(
               (hotelsite) => hotelsite.id === +match.params.hotelsiteId
             )[0]
           }
+          isLoading={this.props.hotelsites.isLoading}
+          errMess={this.props.hotelsites.errMess}
           comments={this.props.comments.filter(
             (comment) => comment.hotelsiteId === +match.params.hotelsiteId
           )}
