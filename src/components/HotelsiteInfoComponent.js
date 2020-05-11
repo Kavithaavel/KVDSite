@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
+import { FadeTransform, Fade, Stagger } from "react-animation-components";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -157,17 +158,26 @@ function RenderComments({ comments, postComment, hotelsiteId }) {
             <CardTitle>Comments</CardTitle>
           </CardBody>
           <CardBody>
-            {comments.map((comment) => (
-              <div key={comment.id}>
-                {comment.text} <br />
-                -- {comment.author},{" "}
-                {new Intl.DateTimeFormat("en-US", {
-                  year: "numeric",
-                  month: "short",
-                  day: "2-digit",
-                }).format(new Date(Date.parse(comment.date)))}
-              </div>
-            ))}
+            <Stagger in>
+              {comments.map((comment) => {
+                return (
+                  <Fade in key={comment.id}>
+                    <div>
+                      <p>
+                        {comment.text}
+                        <br />
+                        -- {comment.author},{" "}
+                        {new Intl.DateTimeFormat("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "2-digit",
+                        }).format(new Date(Date.parse(comment.date)))}
+                      </p>
+                    </div>
+                  </Fade>
+                );
+              })}
+            </Stagger>
             <CommentForm postComment={postComment} hotelsiteId={hotelsiteId} />
           </CardBody>
         </Card>
@@ -180,14 +190,20 @@ function RenderComments({ comments, postComment, hotelsiteId }) {
 function RenderHotelsite({ hotelsite }) {
   if (hotelsite) {
     return (
-      <div className="col m-1">
-        <Card>
-          {/* <CardImg src={`/${hotelsite.image}`} alt={hotelsite.name} /> */}
-          <CardImg top src={baseUrl + hotelsite.image} alt={hotelsite.name} />
-          <CardBody>
-            <CardTitle>{hotelsite.description}</CardTitle>
-          </CardBody>
-        </Card>
+      <div className="col-md-5 m-1">
+        <FadeTransform
+          in
+          transformProps={{
+            exitTransform: "scale(0.5) translateY(-50%)",
+          }}
+        >
+          <Card>
+            <CardImg top src={baseUrl + hotelsite.image} alt={hotelsite.name} />
+            <CardBody>
+              <CardTitle>{hotelsite.description}</CardTitle>
+            </CardBody>
+          </Card>
+        </FadeTransform>
       </div>
     );
   }
