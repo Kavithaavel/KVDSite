@@ -17,6 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -181,7 +182,8 @@ function RenderHotelsite({ hotelsite }) {
     return (
       <div className="col m-1">
         <Card>
-          <CardImg src={`/${hotelsite.image}`} alt={hotelsite.name} />
+          {/* <CardImg src={`/${hotelsite.image}`} alt={hotelsite.name} /> */}
+          <CardImg top src={baseUrl + hotelsite.image} alt={hotelsite.name} />
           <CardBody>
             <CardTitle>{hotelsite.description}</CardTitle>
           </CardBody>

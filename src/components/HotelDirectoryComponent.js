@@ -9,12 +9,17 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 function RenderHotelDirectoryItem({ hotelsite, onClick }) {
   return (
     <Card>
       <Link to={`/directory/${hotelsite.id}`}>
-        <CardImg width="100%" src={hotelsite.image} alt={hotelsite.name} />
+        <CardImg
+          width="100%"
+          src={baseUrl + hotelsite.image}
+          alt={hotelsite.name}
+        />
         <CardImgOverlay>
           <CardTitle>{hotelsite.name}</CardTitle>
         </CardImgOverlay>
