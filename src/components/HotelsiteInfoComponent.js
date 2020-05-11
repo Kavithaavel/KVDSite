@@ -38,7 +38,7 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
-    this.props.addComment(
+    this.props.postComment(
       this.props.hotelsiteId,
       values.rating,
       values.author,
@@ -148,7 +148,7 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, addComment, hotelsiteId }) {
+function RenderComments({ comments, postComment, hotelsiteId }) {
   if (comments) {
     return (
       <div className="col">
@@ -168,7 +168,7 @@ function RenderComments({ comments, addComment, hotelsiteId }) {
                 }).format(new Date(Date.parse(comment.date)))}
               </div>
             ))}
-            <CommentForm addComment={addComment} hotelsiteId={hotelsiteId} />
+            <CommentForm postComment={postComment} hotelsiteId={hotelsiteId} />
           </CardBody>
         </Card>
       </div>
@@ -234,7 +234,7 @@ function HotelsiteInfo(props) {
           <RenderHotelsite hotelsite={props.hotelsite} />
           <RenderComments
             comments={props.comments}
-            addComment={props.addComment}
+            postComment={props.postComment}
             hotelsiteId={props.hotelsite.id}
           />
         </div>

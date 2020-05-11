@@ -10,7 +10,7 @@ import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { actions } from "react-redux-form";
 import {
-  addComment,
+  postComment,
   fetchHotelsites,
   fetchComments,
   fetchPromotions,
@@ -26,8 +26,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  addComment: (hotelsiteId, rating, author, text) =>
-    addComment(hotelsiteId, rating, author, text),
+  postComment: (hotelsiteId, rating, author, text) =>
+    postComment(hotelsiteId, rating, author, text),
   fetchHotelsites: () => fetchHotelsites(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
   fetchComments: () => fetchComments(),
@@ -78,7 +78,7 @@ class Main extends Component {
             (comment) => comment.hotelsiteId === +match.params.hotelsiteId
           )}
           commentsErrMess={this.props.comments.errMess}
-          addComment={this.props.addComment}
+          postComment={this.props.postComment}
         />
       );
     };
