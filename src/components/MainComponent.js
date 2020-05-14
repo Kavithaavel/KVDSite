@@ -14,6 +14,8 @@ import {
   fetchHotelsites,
   fetchComments,
   fetchPromotions,
+  fetchPartners,
+  postFeedback,
 } from "../redux/ActionCreators";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -29,10 +31,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   postComment: (hotelsiteId, rating, author, text) =>
     postComment(hotelsiteId, rating, author, text),
+  postFeedback: (feedback) => postFeedback(feedback),
   fetchHotelsites: () => fetchHotelsites(),
   resetFeedbackForm: () => actions.reset("feedbackForm"),
   fetchComments: () => fetchComments(),
   fetchPromotions: () => fetchPromotions(),
+  fetchPartners: () => fetchPartners(),
 };
 
 class Main extends Component {
@@ -40,6 +44,7 @@ class Main extends Component {
     this.props.fetchHotelsites();
     this.props.fetchComments();
     this.props.fetchPromotions();
+    this.props.fetchPartners();
   }
 
   render() {
@@ -60,7 +65,13 @@ class Main extends Component {
           }
           promotionLoading={this.props.promotions.isLoading}
           promotionErrMess={this.props.promotions.errMess}
-          partner={this.props.partners.filter((partner) => partner.featured)[0]}
+          partner={
+            this.props.partners.partners.filter(
+              (partner) => partner.featured
+            )[0]
+          }
+          partnerLoading={this.props.partners.isLoading}
+          partnerErrMess={this.props.partners.errMess}
         />
       );
     };
@@ -110,7 +121,10 @@ class Main extends Component {
                 exact
                 path="/contactus"
                 render={() => (
-                  <Contact resetFeedbackForm={this.props.resetFeedbackForm} />
+                  <Contact
+                    postFeedback={this.props.postFeedback}
+                    resetFeedbackForm={this.props.resetFeedbackForm}
+                  />
                 )}
               />
               <Route
