@@ -62,3 +62,14 @@ h2 {
   opacity: 0;
   transition: 300ms ease-out;
 }
+
+.booking-message {
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  border: 1px solid limegreen;
+  border-radius: 0.5em;
+}
+
+.booking-dates {
+  margin-bottom: 1em;
+}

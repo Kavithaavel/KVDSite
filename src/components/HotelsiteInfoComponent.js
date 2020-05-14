@@ -13,12 +13,15 @@ import {
   Modal,
   ModalBody,
   ModalHeader,
+  CardFooter,
+  CardHeader,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
 import { FadeTransform, Fade, Stagger } from "react-animation-components";
+import Booking from "./Booking";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -149,15 +152,18 @@ class CommentForm extends Component {
   }
 }
 
-function RenderComments({ comments, postComment, hotelsiteId }) {
+function RenderComments({ comments, postComment, hotelsiteId, hotelsiteName }) {
   if (comments) {
     return (
       <div className="col">
         <Card>
           <CardBody>
-            <CardTitle>Comments</CardTitle>
+            <CardTitle>
+              <Booking hotelsiteName={hotelsiteName} />
+            </CardTitle>
           </CardBody>
           <CardBody>
+            <CardTitle>Comments</CardTitle>
             <Stagger in>
               {comments.map((comment) => {
                 return (
@@ -252,6 +258,7 @@ function HotelsiteInfo(props) {
             comments={props.comments}
             postComment={props.postComment}
             hotelsiteId={props.hotelsite.id}
+            hotelsiteName={props.hotelsite.name}
           />
         </div>
       </div>
