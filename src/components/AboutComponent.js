@@ -87,9 +87,9 @@ function About(props) {
             <BreadcrumbItem>
               <Link to="/home">Home</Link>
             </BreadcrumbItem>
-            <BreadcrumbItem active>About Us</BreadcrumbItem>
+            <BreadcrumbItem active>About KVD</BreadcrumbItem>
           </Breadcrumb>
-          <h2>About Us</h2>
+          <h2>About KVD</h2>
           <hr />
         </div>
       </div>
@@ -97,30 +97,31 @@ function About(props) {
         <div className="col-sm-6">
           <h3>Our Mission</h3>
           <p>
-            We present a curated database of the best campsites in the vast
-            woods and backcountry of the World Wide Web Wilderness. We increase
-            access to adventure for the public while promoting safe and
-            respectful use of resources. The expert wilderness trekkers on our
-            staff personally verify each campsite to make sure that they are up
-            to our standards. We also present a platform for campers to share
-            reviews on campsites they have visited with each other.
+            Since 2010, KVD has helped budget-savvy travelers explore the globe
+            at a discount. We have access to some of the most innovative,
+            intuitive technologies the travel industry has to offer. Whether you
+            book right here on our website or using our award winning app, one
+            thing is for sure – KVD can help you save big on your next trip.
           </p>
         </div>
         <div className="col-sm-6">
           <Card>
-            <CardHeader className="bg-primary text-white">
+            <CardHeader className="bg-success text-white">
               <h3>Facts At a Glance</h3>
             </CardHeader>
             <CardBody>
               <dl className="row">
                 <dt className="col-6">Founded</dt>
-                <dd className="col-6">February 3, 2016</dd>
-                <dt className="col-6">No. of Campsites in 2019</dt>
-                <dd className="col-6">563</dd>
-                <dt className="col-6">No. of Reviews in 2019</dt>
-                <dd className="col-6">4388</dd>
+                <dd className="col-6">April 16, 2010</dd>
+                <dt className="col-6">NASDAQ: KVD Stock Quote</dt>
+                <dd className="col-6">$82.71 +0.7</dd>
+                <dt className="col-6">Recent Quartley Results</dt>
+                <dd className="col-6">
+                  {" "}
+                  <Link to="/home">2020 Q1</Link>
+                </dd>
                 <dt className="col-6">Employees</dt>
-                <dd className="col-6">42</dd>
+                <dd className="col-6">101</dd>
               </dl>
             </CardBody>
           </Card>
@@ -130,13 +131,13 @@ function About(props) {
             <CardBody>
               <blockquote className="blockquote">
                 <p className="mb-0">
-                  I will not follow where the path may lead, but I will go where
-                  there is no path, and I will leave a trail.
+                  Success seems to be connected with action. Successful people
+                  keep moving. They make mistakes, but they don't quit.
                 </p>
                 <footer className="blockquote-footer">
-                  Muriel Strode,{" "}
+                  Conrad Hilton,{" "}
                   <cite title="Source Title">
-                    "Wind-Wafted Wild Flowers" - The Open Court, 1903
+                    Businessman "December 25, 1887 - January 3, 1979"
                   </cite>
                 </footer>
               </blockquote>
@@ -146,7 +147,7 @@ function About(props) {
       </div>
       <div className="row row-content">
         <div className="col-12">
-          <h3>Community Partners</h3>
+          <h3>Our Partners</h3>
         </div>
         <div className="col mt-4">
           <PartnerList partners={props.partners} />
