@@ -16,7 +16,7 @@ function RenderHotelDirectoryItem({ hotelsite, onClick }) {
     <Card>
       <Link to={`/directory/${hotelsite.id}`}>
         <CardImg
-          width="100%"
+          className="card-img-top"
           src={baseUrl + hotelsite.image}
           alt={hotelsite.name}
         />
