@@ -6,6 +6,8 @@ import About from "./AboutComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Contact from "./ContactComponent";
+import Promotions from "./Promotions";
+
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { actions } from "react-redux-form";
@@ -135,6 +137,11 @@ class Main extends Component {
                 exact
                 path="/aboutus"
                 render={() => <About partners={this.props.partners} />}
+              />
+              <Route
+                exact
+                path="/promotions"
+                render={() => <Promotions partners={this.props.partners} />}
               />
               <Redirect to="/home" />
             </Switch>

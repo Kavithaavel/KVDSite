@@ -7,20 +7,21 @@ function Footer(props) {
       <div className="container">
         <div className="row">
           <div className="col-4 col-sm-2 offset-1">
-            <h5>Links</h5>
-            <ul className="list-unstyled">
-              <li>
+            <ul class="list-inline">
+              <li class="list-inline-item">
                 <Link to="/home">Home</Link>
               </li>
-              <li>
+              <li class="list-inline-item">
                 <Link to="/directory">Hotel Directory</Link>
               </li>
-              <li>
-                <Link to="/aboutus">About</Link>
+              <li class="list-inline-item">
+                <Link to="/promotions">Top Deals</Link>
               </li>
-              <li>
-                <Link to="/contactus">Contact</Link>
+              <li class="list-inline-item">
+                <Link to="/aboutus">About KVD /</Link>
+                <Link to="/contactus"> Contact</Link>
               </li>
+              <li class="list-inline-item"></li>
             </ul>
           </div>
           <div className="col-6 col-sm-3 text-center">
