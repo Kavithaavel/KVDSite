@@ -6,24 +6,29 @@ import {
   CardTitle,
   Breadcrumb,
   BreadcrumbItem,
+  CardBody,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
+import SearchBar from "../components/SearchBar/Bar";
 
 function RenderHotelDirectoryItem({ hotelsite, onClick }) {
   return (
-    <Card>
-      <Link to={`/directory/${hotelsite.id}`}>
-        <CardImg
-          className="card-img-top"
-          src={baseUrl + hotelsite.image}
-          alt={hotelsite.name}
-        />
-        <CardImgOverlay>
-          <CardTitle>{hotelsite.name}</CardTitle>
-        </CardImgOverlay>
-      </Link>
+    <Card style={{ width: "30rem" }}>
+      <CardBody>
+        <Link to={`/directory/${hotelsite.id}`}>
+          <CardImg
+            top
+            className="card-img-top"
+            src={baseUrl + hotelsite.image}
+            alt={hotelsite.name}
+          />
+          <CardImgOverlay>
+            <CardTitle>{hotelsite.name}</CardTitle>
+          </CardImgOverlay>
+        </Link>
+      </CardBody>
     </Card>
   );
 }
@@ -66,6 +71,14 @@ function HotelDirectory(props) {
             </BreadcrumbItem>
             <BreadcrumbItem active>Hotel Directory</BreadcrumbItem>
           </Breadcrumb>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <section className="page">
+            <SearchBar />
+            <h2 className="page__title">All Hotels: 4 </h2>
+          </section>
         </div>
       </div>
       <div className="row">{hotelDirectory}</div>

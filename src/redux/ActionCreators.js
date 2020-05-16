@@ -2,6 +2,13 @@ import * as ActionTypes from "./ActionTypes";
 import { baseUrl } from "../shared/baseUrl";
 //import { HOTELSITES } from "../shared/hotelsites";
 
+export const search = (key) => {
+  return {
+    type: ActionTypes.SEARCH,
+    key,
+  };
+};
+
 export const fetchComments = () => (dispatch) => {
   return fetch(baseUrl + "comments")
     .then(
