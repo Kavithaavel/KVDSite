@@ -64,6 +64,13 @@ class Main extends Component {
           }
           hotelsitesLoading={this.props.hotelsites.isLoading}
           hotelsitesErrMess={this.props.hotelsites.errMess}
+          hotelsite1={
+            this.props.hotelsites.hotelsites.filter(
+              (hotelsite) => hotelsite.featured
+            )[1]
+          }
+          hotelsitesLoading={this.props.hotelsites.isLoading}
+          hotelsitesErrMess={this.props.hotelsites.errMess}
           promotion={
             this.props.promotions.promotions.filter(
               (promotion) => promotion.featured
@@ -71,13 +78,20 @@ class Main extends Component {
           }
           promotionLoading={this.props.promotions.isLoading}
           promotionErrMess={this.props.promotions.errMess}
-          partner={
-            this.props.partners.partners.filter(
-              (partner) => partner.featured
-            )[0]
+          promotion1={
+            this.props.promotions.promotions.filter(
+              (promotion) => promotion.featured
+            )[1]
           }
-          partnerLoading={this.props.partners.isLoading}
-          partnerErrMess={this.props.partners.errMess}
+          promotionLoading={this.props.promotions.isLoading}
+          promotionErrMess={this.props.promotions.errMess}
+          // partner={
+          //   this.props.partners.partners.filter(
+          //     (partner) => partner.featured
+          //   )[0]
+          // }
+          // partnerLoading={this.props.partners.isLoading}
+          // partnerErrMess={this.props.partners.errMess}
         />
       );
     };
@@ -141,7 +155,7 @@ class Main extends Component {
               <Route
                 exact
                 path="/promotions"
-                render={() => <Promotions partners={this.props.partners} />}
+                render={() => <Promotions promotions={this.props.promotions} />}
               />
               <Redirect to="/home" />
             </Switch>

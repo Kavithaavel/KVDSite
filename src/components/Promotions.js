@@ -12,56 +12,62 @@ import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
 import { Fade, Stagger } from "react-animation-components";
 
-function PartnerList(props) {
-  const partners = props.partners.partners.map((partner) => {
+function PromotionList(props) {
+  const promotions = props.promotions.promotions.map((promotions) => {
     return (
       <div>
-        <Fade in key={partner.id}>
-          <Media list key={partner.id}>
-            <RenderPartner partner={partner} />
+        <Fade in key={promotions.id}>
+          <Media list key={promotions.id}>
+            <RenderPromotions promotions={promotions} />
           </Media>
         </Fade>
       </div>
     );
   });
 
-  if (props.partners.isLoading) {
+  if (props.promotions.isLoading) {
     return <Loading />;
   }
-  if (props.partners.errMess) {
+  if (props.promotions.errMess) {
     return (
       <div className="col">
-        <h4>{props.partners.errMess}</h4>
+        <h4>{props.promotions.errMess}</h4>
       </div>
     );
   }
   return (
-    <div className="col mt-4">
+    <div className="col">
       <Media list>
-        <Stagger in>{partners}</Stagger>
+        <Stagger in>{promotions}</Stagger>
       </Media>
     </div>
   );
 }
 
-function RenderPartner({ partner }) {
-  if (partner) {
+function RenderPromotions({ promotions }) {
+  if (promotions) {
     return (
       <React.Fragment>
         <div className="row">
-          <div className="col-2">
+          <div className="col-8">
             <Media
               object
-              src={baseUrl + partner.image}
-              alt={partner.name}
-              width={150}
+              src={baseUrl + promotions.image}
+              alt={promotions.name}
+              width={400}
             />
-          </div>
-          <div className="col">
-            <Media body className="ml-5 mb-4">
-              <Media heading>{partner.name}</Media>
-              {partner.description}
+            <Media body>
+              <Media heading>{promotions.name}</Media>
+              {promotions.description}
             </Media>
+          </div>
+
+          <div className="col-4">
+            <Media
+              object
+              src={baseUrl + promotions.amen}
+              alt={promotions.name}
+            />
           </div>
         </div>
       </React.Fragment>
@@ -71,14 +77,6 @@ function RenderPartner({ partner }) {
 }
 
 function Promotions(props) {
-  // const partners = props.partners.map((partner) => {
-  //   return (
-  //     <Media list key={partner.id}>
-  //       <RenderPartner partner={partner} />
-  //     </Media>
-  //   );
-  // });
-
   return (
     <div className="container">
       <div className="row">
@@ -89,47 +87,14 @@ function Promotions(props) {
             </BreadcrumbItem>
             <BreadcrumbItem active>Top Deals</BreadcrumbItem>
           </Breadcrumb>
-          <h2>Top Hotel Deals</h2>
+          <h2>Book Last Minute Hotel Deals!</h2>
           <hr />
         </div>
       </div>
-      <div className="row row-content">
-        <div className="col-sm-6">
-          <h3>Best Recent Deals for you..</h3>
-          <p>
-            Since 2010, KVD has helped budget-savvy travelers explore the globe
-            at a discount. We have access to some of the most innovative,
-            intuitive technologies the travel industry has to offer. Whether you
-            book right here on our website or using our award winning app, one
-            thing is for sure – KVD can help you save big on your next trip.
-          </p>
-        </div>
 
-        <div className="col-sm-6">
-          <Card className="bg-light mt-3">
-            <CardBody>
-              <blockquote className="blockquote">
-                <p className="mb-0">
-                  Success seems to be connected with action. Successful people
-                  keep moving. They make mistakes, but they don't quit.
-                </p>
-                <footer className="blockquote-footer">
-                  Conrad Hilton,{" "}
-                  <cite title="Source Title">
-                    Businessman "December 25, 1887 - January 3, 1979"
-                  </cite>
-                </footer>
-              </blockquote>
-            </CardBody>
-          </Card>
-        </div>
-      </div>
       <div className="row row-content">
-        <div className="col-12">
-          <h3>Our Partners</h3>
-        </div>
-        <div className="col mt-4">
-          <PartnerList partners={props.partners} />
+        <div className="col">
+          <PromotionList promotions={props.promotions} />
         </div>
       </div>
     </div>

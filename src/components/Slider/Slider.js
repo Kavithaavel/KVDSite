@@ -21,7 +21,7 @@ class Slider extends Component {
 
     this.setState({
       images: hotel.images,
-      selected: hotel.images[0] || "https://imgplaceholder.com/300x200",
+      selected: hotel.images[0] || "https://www.google.com",
     });
   }
 
