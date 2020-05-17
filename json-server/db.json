@@ -1,0 +1,352 @@
+{
+  "hotelsites": [
+    {
+      "id": 0,
+      "name": "Hyatt Place Hotel",
+      "image": "images/Hyatt.jpg",
+      "images": [
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/209/20954791.jpg",
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/193/193224995.jpg",
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/195/195110536.jpg"
+      ],
+      "elevation": 1233,
+      "featured": true,
+      "description": "Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers."
+    },
+    {
+      "id": 1,
+      "name": "Duxton Inn ",
+      "image": "images/Duxton.jpg",
+      "images": [
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/109/109691023.jpg",
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/154/154756627.jpg",
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/167/167400707.jpg"
+      ],
+      "elevation": 877,
+      "featured": true,
+      "description": "Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River."
+    },
+    {
+      "id": 2,
+      "name": "Holiday Inn",
+      "image": "images/HolidayInn.jpg",
+      "images": [
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/100/100627788.jpg",
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/447/4472614.jpg",
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/201/201233113.jpg"
+      ],
+      "elevation": 2901,
+      "description": "Let NuCamp be your guide to this off-the-beaten-path, hike-in-only campground."
+    },
+    {
+      "id": 3,
+      "name": "Inter Continental",
+      "image": "images/InterContinental.jpg",
+      "images": [
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/193/193234233.jpg",
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/351/35107017.jpg",
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/193/193233957.jpg"
+      ],
+      "elevation": 42,
+      "description": "You'll never want to leave this hidden gem, deep within the lush Redux Woods."
+    },
+    {
+      "id": 4,
+      "name": "Cannery Orlando, FL",
+      "image": "images/Cannery.jpg",
+      "amen": "images/EncoreAmenities.jpg",
+      "images": [
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/209/20954791.jpg",
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/193/193224995.jpg",
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/195/195110536.jpg"
+      ],
+      "featured": false,
+      "elevation": 42,
+      "description": "Wherever in the world you decide to go, you shouldn't have to spend a ton of dough! Choose from our lowest inventory of rooms all priced for $99 or less per night!"
+    },
+    {
+      "id": 5,
+      "name": "Marriott Lake Buena Vista",
+      "image": "images/Encore.jpg",
+      "amen": "images/MarriottAmenities.jpg",
+      "images": [
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/109/109691023.jpg",
+        "https://r-cf.bstatic.com/images/hotel/max1024x768/154/154756627.jpg",
+        "https://q-cf.bstatic.com/images/hotel/max1024x768/167/167400707.jpg"
+      ],
+      "featured": false,
+      "elevation": 42,
+      "description": "Located in Orlando, Courtyard by Marriott Lake Buena Vista at Vista Centre is in the city center , near the airport, Disney Springs and Florida Mall!"
+    }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "hotelsiteId": 0,
+      "rating": 5,
+      "text": "Hyatt Place -What a magnificent view!",
+      "author": "Tinus Lorvaldes",
+      "date": "2018-10-25T16:30Z"
+    },
+    {
+      "id": 1,
+      "hotelsiteId": 0,
+      "rating": 4,
+      "text": "Hyatt Place -The campground was beautiful, but the bugs could bite sometimes.",
+      "author": "Brennen Ech",
+      "date": "2017-06-17T03:33Z"
+    },
+    {
+      "id": 2,
+      "hotelsiteId": 0,
+      "rating": 5,
+      "text": "Hyatt Place -I caught a world-record-breaking trout here on my last visit.",
+      "author": "McKenzie Sebastian",
+      "date": "2019-02-18T18:12Z"
+    },
+    {
+      "id": 3,
+      "hotelsiteId": 0,
+      "rating": 5,
+      "text": "Hyatt Place -A wonderful place to reconnect with nature.",
+      "author": "Jordan Runn",
+      "date": "2019-08-04T20:11Z"
+    },
+    {
+      "id": 4,
+      "hotelsiteId": 0,
+      "rating": 4,
+      "text": "Hyatt Place -The stars at night were a revelation!",
+      "author": "Ann Dabramov",
+      "date": "2018-07-23T19:44Z"
+    },
+    {
+      "id": 5,
+      "hotelsiteId": 1,
+      "rating": 4,
+      "text": "Duxton Inn -The campground was beautiful, but the bugs could bite sometimes.",
+      "author": "Brennen Ech",
+      "date": "2017-06-17T03:33Z"
+    },
+    {
+      "id": 6,
+      "hotelsiteId": 1,
+      "rating": 5,
+      "text": "Duxton Inn -I caught a world-record-breaking trout here on my last visit.",
+      "author": "McKenzie Sebastian",
+      "date": "2019-02-18T18:12Z"
+    },
+    {
+      "id": 7,
+      "hotelsiteId": 1,
+      "rating": 5,
+      "text": "Duxton Inn -A wonderful place to reconnect with nature.",
+      "author": "Jordan Runn",
+      "date": "2019-08-04T20:11Z"
+    },
+    {
+      "id": 8,
+      "hotelsiteId": 1,
+      "rating": 4,
+      "text": "Duxton Inn -The stars at night were a revelation!",
+      "author": "Ann Dabramov",
+      "date": "2018-07-23T19:44Z"
+    },
+    {
+      "id": 9,
+      "hotelsiteId": 1,
+      "rating": 5,
+      "text": "Duxton Inn -What a magnificent view!",
+      "author": "Tinus Lorvaldes",
+      "date": "2018-10-25T16:30Z"
+    },
+    {
+      "id": 10,
+      "hotelsiteId": 2,
+      "rating": 5,
+      "text": "Holiday Inn - I caught a world-record-breaking trout here on my last visit.",
+      "author": "McKenzie Sebastian",
+      "date": "2019-02-18T18:12Z"
+    },
+    {
+      "id": 11,
+      "hotelsiteId": 2,
+      "rating": 5,
+      "text": "Holiday Inn - A wonderful place to reconnect with nature.",
+      "author": "Jordan Runn",
+      "date": "2019-08-04T20:11Z"
+    },
+    {
+      "id": 12,
+      "hotelsiteId": 2,
+      "rating": 4,
+      "text": "Holiday Inn - The stars at night were a revelation!",
+      "author": "Ann Dabramov",
+      "date": "2018-07-23T19:44Z"
+    },
+    {
+      "id": 13,
+      "hotelsiteId": 2,
+      "rating": 5,
+      "text": "Holiday Inn - What a magnificent view!",
+      "author": "Tinus Lorvaldes",
+      "date": "2018-10-25T16:30Z"
+    },
+    {
+      "id": 14,
+      "hotelsiteId": 2,
+      "rating": 4,
+      "text": "Holiday Inn - The campground was beautiful, but the bugs could bite sometimes.",
+      "author": "Brennen Ech",
+      "date": "2017-06-17T03:33Z"
+    },
+    {
+      "id": 15,
+      "hotelsiteId": 3,
+      "rating": 5,
+      "text": "A wonderful place to reconnect with nature.",
+      "author": "Jordan Runn",
+      "date": "2019-08-04T20:11Z"
+    },
+    {
+      "id": 16,
+      "hotelsiteId": 3,
+      "rating": 4,
+      "text": "The stars at night were a revelation!",
+      "author": "Ann Dabramov",
+      "date": "2018-07-23T19:44Z"
+    },
+    {
+      "id": 17,
+      "hotelsiteId": 3,
+      "rating": 5,
+      "text": "What a magnificent view!",
+      "author": "Tinus Lorvaldes",
+      "date": "2018-10-25T16:30Z"
+    },
+    {
+      "id": 18,
+      "hotelsiteId": 3,
+      "rating": 4,
+      "text": "The campground was beautiful, but the bugs could bite sometimes.",
+      "author": "Brennen Ech",
+      "date": "2017-06-17T03:33Z"
+    },
+    {
+      "id": 19,
+      "hotelsiteId": 3,
+      "rating": 5,
+      "text": "I caught a world-record-breaking trout here on my last visit.",
+      "author": "McKenzie Sebastian",
+      "date": "2019-02-18T18:12Z"
+    },
+    {
+      "hotelsiteId": 0,
+      "rating": "4",
+      "author": "Kavitha Velmuru",
+      "text": "May_11_2020",
+      "date": "2020-05-11T21:03:23.181Z",
+      "id": 20
+    },
+    {
+      "hotelsiteId": 2,
+      "rating": "3",
+      "author": "yyeet",
+      "text": "Holiday Inn Feedback - Nice Stay",
+      "date": "2020-05-11T21:04:46.320Z",
+      "id": 21
+    },
+    {
+      "hotelsiteId": 4,
+      "rating": "3",
+      "author": "asdf",
+      "text": "asfasdf",
+      "date": "2020-05-17T00:31:47.745Z",
+      "id": 22
+    }
+  ],
+  "partners": [
+    {
+      "id": 0,
+      "name": "Expedia",
+      "image": "images/Expedia.png",
+      "featured": true,
+      "description": "Expedia Group is the world’s travel platform, with an extensive brand portfolio that includes some of the world’s most trusted online travel brands."
+    },
+    {
+      "id": 1,
+      "name": "Travelocitys",
+      "image": "images/travelologo.jpg",
+      "featured": false,
+      "description": "Travelocity wants to inspire you to “Wander Wisely” and is dedicated to being your travel champion - acompanion and instigator, wandering the world beside you while helping make your traveling experience memorable with innovative apps, competitive prices and 24/7 customer service"
+    },
+    {
+      "id": 2,
+      "name": "Phillyfunguide",
+      "image": "images/PhillyLogo.JPG",
+      "featured": false,
+      "description": "Since 2002, Phillyfunguide has been the Greater Philadelphia region’s go-to event calendar for the most robust upcoming artistic, cultural, entertainment and sporting events."
+    }
+  ],
+  "promotions": [
+    {
+      "id": 0,
+      "name": "Cannery Orlando, FL",
+      "image": "images/Cannery.jpg",
+      "amen": "images/EncoreAmenities.jpg",
+      "featured": true,
+      "description": "Wherever in the world you decide to go, you shouldn't have to spend a ton of dough! Choose from our lowest inventory of rooms all priced for $99 or less per night!"
+    },
+    {
+      "id": 1,
+      "name": "Marriott Lake Buena Vista",
+      "image": "images/Encore.jpg",
+      "amen": "images/MarriottAmenities.jpg",
+      "featured": true,
+      "description": "Located in Orlando, Courtyard by Marriott Lake Buena Vista at Vista Centre is in the city center , near the airport, Disney Springs and Florida Mall!"
+    }
+  ],
+  "feedback": [
+    {
+      "id": 0,
+      "firstname": "Test",
+      "lastname": "Test",
+      "telnum": "12345",
+      "email": "test@test.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "test",
+      "date": "2019-10-25T13:30Z"
+    },
+    {
+      "firstName": "Kavi",
+      "lastName": "dfadadasf",
+      "phoneNum": "2022022021",
+      "email": "Kav@gmail.com",
+      "agree": true,
+      "contactType": "Phone",
+      "feedback": "asdfasfasdfasdfsdaf\nMay-13th Feedback",
+      "id": 1
+    },
+    {
+      "firstName": "hgvkhjh",
+      "lastName": "fsdfsdf",
+      "phoneNum": "2022022021",
+      "email": "R_VELMURUGGAN@HOTMAIL.COM",
+      "agree": false,
+      "contactType": "By Email",
+      "feedback": "sfsdffsdfsd",
+      "id": 2
+    },
+    {
+      "firstName": "hgvkhjh",
+      "lastName": "asdfsfsewr",
+      "phoneNum": "34435433434",
+      "email": "ssddsfds@wrewrwerwrw.vvv",
+      "agree": false,
+      "contactType": "Phone",
+      "feedback": "345345",
+      "id": 3
+    }
+  ]
+}
