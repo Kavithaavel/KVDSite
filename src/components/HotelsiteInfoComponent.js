@@ -65,11 +65,11 @@ class CommentForm extends Component {
       <React.Fragment>
         <div style={{ marginTop: 10 }}>
           <Button outline onClick={this.toggleModal}>
-            <i className="fa fa-pencil fa-lg"> Submit Comment</i>
+            <i className="fa fa-pencil fa-lg">Your Reviews</i>
           </Button>
         </div>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-          <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+          <ModalHeader toggle={this.toggleModal}>Add your Reviews</ModalHeader>
           <ModalBody>
             <LocalForm
               initialState={{ rating: 1 }}
@@ -165,7 +165,7 @@ function RenderComments({ comments, postComment, hotelsiteId, hotelsiteName }) {
             </CardTitle>
           </CardBody>
           <CardBody>
-            <CardTitle>Comments</CardTitle>
+            <CardTitle>Reviews</CardTitle>
             <Stagger in>
               {comments.map((comment) => {
                 return (

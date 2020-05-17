@@ -79,13 +79,13 @@ class Header extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/aboutus">
-                    <i className="fa fa-info fa-lg" /> About KVD
+                  <NavLink className="nav-link" to="/promotions">
+                    <i className="fa fa-plane fa-lg" /> Top Deals
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/promotions">
-                    <i className="fa fa-plane fa-lg" /> Top Deals
+                  <NavLink className="nav-link" to="/aboutus">
+                    <i className="fa fa-info fa-lg" /> About KVD
                   </NavLink>
                 </NavItem>
                 <NavItem>
