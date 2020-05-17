@@ -77,7 +77,7 @@ function HotelDirectory(props) {
         <div className="col">
           <section className="page">
             <SearchBar />
-            <h2 className="page__title">All Hotels: 4 </h2>
+            <h2 className="page__title">All Hotels: 6 </h2>
           </section>
         </div>
       </div>
