@@ -101,13 +101,14 @@ class Main extends Component {
         <HotelsiteInfo
           hotelsite={
             this.props.hotelsites.hotelsites.filter(
-              (hotelsite) => hotelsite.id === +match.params.hotelsiteId
+              // (hotelsite) => hotelsite._id === +match.params.hotelsiteId
+              (hotelsite) => hotelsite._id === match.params.hotelsiteId
             )[0]
           }
           isLoading={this.props.hotelsites.isLoading}
           errMess={this.props.hotelsites.errMess}
           comments={this.props.comments.comments.filter(
-            (comment) => comment.hotelsiteId === +match.params.hotelsiteId
+            (comment) => comment.hotelsiteId === match.params.hotelsiteId
           )}
           commentsErrMess={this.props.comments.errMess}
           postComment={this.props.postComment}

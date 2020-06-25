@@ -17,7 +17,7 @@ function RenderHotelDirectoryItem({ hotelsite, onClick }) {
   return (
     <Card style={{ width: "30rem" }}>
       <CardBody>
-        <Link to={`/directory/${hotelsite.id}`}>
+        <Link to={`/directory/${hotelsite._id}`}>
           <CardImg
             top
             className="card-img-top"
@@ -25,7 +25,7 @@ function RenderHotelDirectoryItem({ hotelsite, onClick }) {
             alt={hotelsite.name}
           />
           <CardImgOverlay>
-            <CardTitle>{hotelsite.name}</CardTitle>
+            <CardTitle> Hello {hotelsite.name}</CardTitle>
           </CardImgOverlay>
         </Link>
       </CardBody>
@@ -36,7 +36,7 @@ function RenderHotelDirectoryItem({ hotelsite, onClick }) {
 function HotelDirectory(props) {
   const hotelDirectory = props.hotelsites.hotelsites.map((hotelsite) => {
     return (
-      <div key={hotelsite.id} className="col-md-5 m-1">
+      <div key={hotelsite._id} className="col-md-5 m-1">
         <RenderHotelDirectoryItem hotelsite={hotelsite} />
       </div>
     );

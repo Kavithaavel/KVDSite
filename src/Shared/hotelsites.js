@@ -22,7 +22,7 @@ export const HOTELSITES = [
     image: "assets/images/HolidayInn.jpg",
     elevation: 2901,
     description:
-      "Let NuCamp be your guide to this off-the-beaten-path, hike-in-only campground.",
+      "Let this camp be your guide to this off-the-beaten-path, hike-in-only campground.",
   },
   {
     id: 3,

@@ -169,7 +169,7 @@ function RenderComments({ comments, postComment, hotelsiteId, hotelsiteName }) {
             <Stagger in>
               {comments.map((comment) => {
                 return (
-                  <Fade in key={comment.id}>
+                  <Fade in key={comment._id}>
                     <div>
                       <p>
                         {comment.text}
@@ -223,6 +223,7 @@ function RenderHotelsite({ hotelsite }) {
 }
 
 function HotelsiteInfo(props) {
+  //console.log(JSON.stringify(props.hotelsite));
   if (props.isLoading) {
     return (
       <div className="container">
@@ -263,7 +264,7 @@ function HotelsiteInfo(props) {
           <RenderComments
             comments={props.comments}
             postComment={props.postComment}
-            hotelsiteId={props.hotelsite.id}
+            hotelsiteId={props.hotelsite._id}
             hotelsiteName={props.hotelsite.name}
           />
         </div>
